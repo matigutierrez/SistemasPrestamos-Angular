@@ -1,0 +1,57 @@
+<!--muestro las deudas de los clientes en una tabla-->
+<div class="container">
+  <center>
+    <h4>Capital Actual:</h4>
+    <h2>${{monto}}</h2>
+  </center>
+</div>
+<div class="row">
+  <div class="container">
+    <div class="card-panel grey lighten-3 z-depth-5">
+      <h4>{{nom}}</h4>
+      <h5>{{em}}</h5>
+      <h5>{{phon}}</h5>
+  </div>
+  </div>
+</div>
+<div class="container">
+  <table class="bordered">
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Estado</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody ng-repeat=" x in pago ">
+      <tr>
+        <td>${{x.valor}}</td>
+          <td>
+            <div ng-switch="x.pagado">
+              <div ng-switch-when="true">Pagado</div>
+              <div ng-switch-when="false">No Pagado</div>
+            </div>
+          </td>
+        <td>
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <div ng-switch="x.pagado">
+                  <div ng-switch-when="false">
+                    <a class="waves-effect waves-light btn blue darken-3" ng-click=pagos($index) >Pagar</a>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </form>  
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <a class="waves-effect waves-light btn blue darken-3" href="/deudores">Volver</a>
+  </div>
+</div>

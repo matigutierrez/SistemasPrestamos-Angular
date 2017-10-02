@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taller Angular</title>
+  <!--llamos a todos los estilos-->
+  <base href="/">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css"  media="screen,projection"/>  
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="lib/css/estilos.css">
+</head>
+<body ng-app="app" >
+  <div>
+    <nav class="s12 m12 l12">
+      <div class="nav-wrapper blue darken-1">
+        <a href="/principal" class="brand-logo center">Taller Angular</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="/clientes">Agregar Clientes</a></li>
+          <li><a href="/listaclientes">Lista Clientes</a></li>
+          <li><a href="/deudores">Deudas Clientes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!--ng-view lo ocupo para ir cambiando las vistas-->
+  <div ng-view></div>
+  <!--importo todos los archivos-->
+  <script src="lib/js/angular.min.js"></script>
+  <script src="lib/js/angular-route.min.js"></script>
+  <script src="lib/js/ngStorage.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/controller/RouteController.js"></script>
+  <script src="app/controller/ClienteController.js"></script>
+  <script src="app/controller/PrestamoController.js"></script>
+  <script src="app/controller/DeudoresController.js"></script>
+  <script src="app/controller/InicioController.js"></script>
+  <script src="app/controller/PagosController.js"></script>
+  <script src="app/controller/MostrarClientesController.js"></script>
+</body>
+</html>

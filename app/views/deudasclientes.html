@@ -1,0 +1,53 @@
+<!--muestro las deudas de los clientes en una tabla-->
+<div class="container">
+  <center>
+    <h4>Capital Actual:</h4>
+    <h2>${{monto}}</h2>
+  </center>
+</div>
+<div class="container">
+  <div class="col s12 m12 l12"> 
+    <table class="bordered" >
+      <thead>
+        <tr>
+          <th class="col s2 m2 l2">Nombre</th>
+          <th class="col s2 m2 l2">Email</th>
+          <th class="col s2 m2 l2">Telefono</th>
+          <th class="col s2 m2 l2">Prestamo</th>
+          <th class="col s2 m2 l2">Total Pagar</th>
+          <th class="col s2 m2 l2">Estado Cuotas</th>
+          <th class="col s2 m2 l2"></th>
+        </tr>
+      </thead>
+      <tbody ng-repeat=" x in deudores">
+        <tr>
+          <td>{{x.cliente.nombre}}</td>
+          <td>{{x.cliente.email}}</td>
+          <td>{{x.cliente.telefono}}</td>
+          <td>${{x.prestamos}}</td>
+          <td>${{x.total}}</td>
+          <td>
+            <div ng-if="x.cuotas[x.cuotas.length-1].pagado == true">Todo Pagado</div>
+            <div ng-if="x.cuotas[x.cuotas.length-1].pagado == false">Cuotas No Pagadas</div>
+          </td>
+          <td>
+            <div ng-if="x.cuotas[x.cuotas.length-1].pagado == true">
+              <div class="row">
+                <div class="input-field col s12">  
+                  <a class="waves-effect waves-light btn blue darken-3" href="/pagar/{{$index}}">Ver Cuotas</a>
+                </div>
+              </div>
+            </div>
+            <div ng-if="x.cuotas[x.cuotas.length-1].pagado == false">
+              <div class="row">
+                <div class="input-field col s12">  
+                  <a class="waves-effect waves-light btn blue darken-3" href="/pagar/{{$index}}">Pagar Cuotas</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

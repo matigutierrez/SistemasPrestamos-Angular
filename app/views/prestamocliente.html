@@ -1,0 +1,72 @@
+<!--ingreso los datos para que un cliente haga un prestamo-->
+<div class="container">
+  <center>
+    <h4>Capital Actual:</h4>
+    <h2>${{monto}}</h2>
+  </center>
+</div>
+<div class="container">
+  <div class="row">
+    <center>
+      <h1>Prestamos</h1>
+    </center>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="fond"> 
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <div class="row">
+                <label for="first_name">Nombre Completo</label>
+              </div>
+              <input type="text" class="validate" ng-model="deudaModel.nombre" ng-value="name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <div class="row">
+                <label for="first_name">Email</label>
+              </div>
+              <input type="text" class="validate" ng-model="deudaModel.email" ng-value="eml">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <div class="row">
+                <label for="first_name">Telefono</label>
+              </div>
+              <input type="text" class="validate" ng-model="deudaModel.telefono" ng-value="phone">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <div class="row">
+                <label for="first_name">Monto</label>
+              </div>
+              <input type="number" class="validate" ng-model="deudaModel.prestamo">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <select class="browser-default" ng-model="deudaModel.cuota_id">
+                <option value="" disabled selected>Cuotas</option>
+                <option ng-repeat=" x in ncuotas" value="{{x.id}}">{{x.n_cuotas}}</option>
+              </select>
+            </div>        
+          </div>
+          <div class="col s8">
+           <div class="row">
+              <a class="btn waves-effect waves-light blue darken-3" href="/deudores" ng-click="deudas(deudaModel)">Enviar
+                <i class="material-icons right blue darken-3">send</i>
+              </a>
+            </div>  
+          </div>
+          <div class="col s4">
+            <a class="waves-effect waves-light btn blue darken-3" href="/listaclientes">Volver Atras</a>
+          </div>
+        </form> 
+      </div>  
+    </div>
+  </div>  
+</div>

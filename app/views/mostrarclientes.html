@@ -1,0 +1,34 @@
+<div class="container">
+  <center>
+    <h4>Capital Actual:</h4>
+    <h2>${{monto}}</h2>
+  </center>
+</div>
+<div class="container">
+  <div class="col s12 m12 l12"> 
+    <table class="bordered">
+      <thead>
+        <tr>
+            <th class="col s2 m2 l2">Nombre</th>
+            <th class="col s2 m2 l2">Email</th>
+            <th class="col s2 m2 l2">Telefono</th>
+            <th class="col s2 m2 l2"></th>
+            <th class="col s2 m2 l2"></th>
+        </tr>
+      </thead>
+      <tbody ng-repeat=" x in users">
+        <tr>
+          <td>{{x.nombre}}</td>
+          <td>{{x.email}}</td>
+          <td>{{x.telefono}}</td>
+          <td>
+            <a class="waves-effect waves-light btn blue darken-3" href="/prestamo/{{x.nombre}}/{{x.email}}/{{x.telefono}}" ng-click="prestamo($index)">Pedir Prestamo</a>
+          </td>
+          <td>
+            <a class="waves-effect waves-light btn red darken-1" ng-click="eliminar($index)">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
